@@ -23,23 +23,10 @@
             font-size: 4em;
             margin-bottom: 20px;
         }
-
-        button {
-            background-color: #2196F3; /* Blue button color */
-            color: #ffffff; /* Button text color */
-            padding: 15px 30px;
-            font-size: 1.5em;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
     </style>
 </head>
 <body>
     <p id="time"></p>
-    
-    <button onclick="toggleTimeFormat()">Toggle Time Format</button>
 
     <script>
         function getCurrentTime() {
@@ -50,18 +37,6 @@
         function updateTime() {
             const timeElement = document.getElementById("time");
             timeElement.textContent = getCurrentTime();
-        }
-
-        function toggleTimeFormat() {
-            const timeElement = document.getElementById("time");
-            const currentTime = new Date();
-            const options = {
-                hour12: !currentTime.toLocaleTimeString(undefined, { hour12: true }).includes("AM"),
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
-            };
-            timeElement.textContent = currentTime.toLocaleTimeString(undefined, options);
         }
 
         function updateLocationTime() {
